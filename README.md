@@ -1,2 +1,3 @@
 # clone-tabnews
-Um novo começo... Não... Uma nova continuação. 
+
+Um novo começo... Não... Uma nova continuação.
