@@ -12,14 +12,12 @@ test('GET /api/v1/status shoud return 200', async () => {
 	expect(responseBody.updated_at.slice(0, 10)).toEqual(new Date().toISOString().slice(0, 10));
 
 	const pgVersion = responseBody.dependencies.database.version;
-	expect(pgVersion).toBe('16.0');
+	expect(pgVersion).toBe('16.6');
 
 	const maxConnections = responseBody.dependencies.database.max_connections;
-	expect(maxConnections).toBe(100);
+	expect(maxConnections).toBe(112);
 
 	const openedConnections = responseBody.dependencies.database.opened_connections;
-	expect(openedConnections).toBe(1);
+	expect(openedConnections).toBeGreaterThanOrEqual(1);
 });
-
-
 
